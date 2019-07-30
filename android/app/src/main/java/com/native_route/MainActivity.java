@@ -4,6 +4,7 @@ import android.os.Bundle;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivity;
 import com.getui.reactnativegetui.GetuiModule;
+import cn.jpush.android.api.JPushInterface;
 
 public class MainActivity extends ReactActivity {
 
@@ -20,5 +21,6 @@ public class MainActivity extends ReactActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         GetuiModule.initPush(this);
+        JPushInterface.init(this);
     }
 }

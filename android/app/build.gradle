@@ -133,6 +133,10 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        manifestPlaceholders = [
+            JPUSH_APPKEY: "68990da2e91012c7237abd6f", //应用APPKey
+            APP_CHANNEL: "developer-default"    //应用渠道号, 默认即可
+        ]
     }
     splits {
         abi {
@@ -197,6 +201,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
+    compile project(':jpush-react-native')  // 添加 jpush 依赖
+    compile project(':jcore-react-native')  // 添加 jcore 依赖
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
     if (enableHermes) {

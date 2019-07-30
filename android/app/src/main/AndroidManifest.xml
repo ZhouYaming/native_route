@@ -25,6 +25,13 @@
 <meta-data android:name="PUSH_APPKEY" android:value="kpUz0PGAzw6uRzA0a7rHJ5"/>
 <meta-data android:name="PUSH_APPSECRET" android:value="kk2KfTZdp58VnyHOfh7At6"/>
 
+<meta-data
+        android:name="JPUSH_APPKEY"
+        android:value="${JPUSH_APPKEY}" />
+    <meta-data
+        android:name="JPUSH_CHANNEL"
+        android:value="${APP_CHANNEL}" />
+
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
     </application>
 
