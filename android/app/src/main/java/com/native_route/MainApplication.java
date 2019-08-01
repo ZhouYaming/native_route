@@ -14,6 +14,9 @@ import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 
 import java.util.List;
+import com.getui.gs.sdk.GsManager;
+import com.native_route.Package.CountPackage;
+
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -31,6 +34,7 @@ public class MainApplication extends Application implements ReactApplication {
       // packages.add(new MyReactNativePackage());
       packages.add(new GetuiPackage());
       packages.add(new JPushPackage(false , false));
+      packages.add(new CountPackage());
       return packages;
     }
 
@@ -49,5 +53,6 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
+    GsManager.getInstance().init(this);
   }
 }

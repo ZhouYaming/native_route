@@ -9,6 +9,7 @@
       android:icon="@mipmap/ic_launcher"
       android:roundIcon="@mipmap/ic_launcher_round"
       android:allowBackup="false"
+      android:usesCleartextTraffic="true"
       android:theme="@style/AppTheme">
       <activity
         android:name=".MainActivity"
@@ -19,12 +20,20 @@
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
-      </activity>
+        <intent-filter>
+            <data android:scheme="geshu.3bb572885dba6679" />
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+        </intent-filter>
 
+      </activity>
+<!-- 个推 -->
 <meta-data android:name="PUSH_APPID" android:value="Ay1Gpoer2R8OiPN9IjWlo8"/>
 <meta-data android:name="PUSH_APPKEY" android:value="kpUz0PGAzw6uRzA0a7rHJ5"/>
 <meta-data android:name="PUSH_APPSECRET" android:value="kk2KfTZdp58VnyHOfh7At6"/>
 
+<!-- 极光配置 -->
 <meta-data
         android:name="JPUSH_APPKEY"
         android:value="${JPUSH_APPKEY}" />

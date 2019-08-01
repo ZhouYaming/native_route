@@ -2,9 +2,23 @@ import React from 'react'
 import { View, Text, StatusBar } from 'react-native'
 import style from "./index.style"
 // import console = require('console');
-
+import { NativeModules } from "react-native";
 
 class Account extends React.Component{
+    componentDidMount(){
+        this.jtenter = this.props.navigation.addListener('didFocus',this.enterInfo)
+        this.jtleave = this.props.navigation.addListener('didBlur',this.leaveInfo)
+    }
+    componentWillMount(){
+        this.jtenter && this.jtenter.remove()
+        this.jtleave && this.jtleave.remove()
+    }
+    enterInfo = () =>{
+        NativeModules.countModule.startCount('account')
+    }
+    leaveInfo = () =>{
+        NativeModules.countModule.endCount('account')
+    }
 
     render () { 
         return (

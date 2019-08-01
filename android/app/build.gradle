@@ -135,7 +135,11 @@ android {
         versionName "1.0"
         manifestPlaceholders = [
             JPUSH_APPKEY: "68990da2e91012c7237abd6f", //应用APPKey
-            APP_CHANNEL: "developer-default"    //应用渠道号, 默认即可
+            APP_CHANNEL: "developer-default",    //应用渠道号, 默认即可
+
+            // 个推个数统计    
+            GS_APPID : "3W5crZScOn89TBOViqphu9",
+            GT_INSTALL_CHANNEL : "APP_CHANNEL"
         ]
     }
     splits {
@@ -204,7 +208,9 @@ dependencies {
     compile project(':jpush-react-native')  // 添加 jpush 依赖
     compile project(':jcore-react-native')  // 添加 jcore 依赖
     implementation "com.facebook.react:react-native:+"  // From node_modules
-
+    
+    implementation files('libs/GTC-2.0.0.aar')
+    implementation files('libs/GSSDK-2.2.8.0.aar')
     if (enableHermes) {
       def hermesPath = "../../node_modules/hermesvm/android/";
       debugImplementation files(hermesPath + "hermes-debug.aar")
