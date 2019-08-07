@@ -1,6 +1,5 @@
 import React,{ Component } from 'react'
 import { View } from 'react-native'
-import Reactotron from 'reactotron-react-native'
 import { Colors } from 'react-native/Libraries/NewAppScreen'
 import Router from './router/index'
 import ProccessBack from './router/component/pressBack'
@@ -15,7 +14,7 @@ export default class App extends Component{
 
     render() {
         // console.log(999999,this.props)
-        Reactotron.log('hello rendering world')
+        // Reactotron.log('hello rendering world')
         return(
             <View style={{flex:1,backgroundColor:Colors.light}}>
                 <ProccessBack>
@@ -26,5 +25,4 @@ export default class App extends Component{
       }
 }
 
-import('./tool').then(() => console.log('Reactotron Configured'))
   

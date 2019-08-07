@@ -8,7 +8,7 @@ class Person extends React.Component{
         this.jtenter = this.props.navigation.addListener('didFocus',this.enterInfo)
         this.jtleave = this.props.navigation.addListener('didBlur',this.leaveInfo)
     }
-    componentWillMount(){
+    componentWillUnmount(){
         this.jtenter && this.jtenter.remove()
         this.jtleave && this.jtleave.remove()
     }
